@@ -1,5 +1,8 @@
 package io.tinder.ai_tinder_backend;
 
+import io.tinder.ai_tinder_backend.conversations.ChatMessage;
+import io.tinder.ai_tinder_backend.conversations.Conversation;
+import io.tinder.ai_tinder_backend.conversations.ConversationRepository;
 import io.tinder.ai_tinder_backend.profiles.Gender;
 import io.tinder.ai_tinder_backend.profiles.Profile;
 import io.tinder.ai_tinder_backend.profiles.ProfileRepository;
@@ -8,11 +11,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @SpringBootApplication
 public class AiTinderBackendApplication implements CommandLineRunner {
 
 	@Autowired
 	private ProfileRepository profileRepository;
+
+	@Autowired
+	private ConversationRepository conversationRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AiTinderBackendApplication.class, args);
@@ -32,8 +41,18 @@ public class AiTinderBackendApplication implements CommandLineRunner {
 				"INTP"
 		);
 		profileRepository.save(profile);
-
 		profileRepository.findAll().forEach(System.out::println);
+
+		Conversation conversation = new Conversation(
+				"1",
+				profile.id(),
+				List.of(
+						new ChatMessage("Hello", profile.id(), LocalDateTime.now())
+				)
+		);
+		conversationRepository.save(conversation);
+		conversationRepository.findAll().forEach(System.out::println);
+
 	}
 
 }
