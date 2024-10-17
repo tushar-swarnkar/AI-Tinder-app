@@ -28,6 +28,10 @@ public class AiTinderBackendApplication implements CommandLineRunner {
 	}
 
 	public void run(String ... args) {
+
+		profileRepository.deleteAll();
+		conversationRepository.deleteAll();
+
 		// create a profile and save it to the db
 		Profile profile = new Profile(
 				"1",
@@ -41,6 +45,20 @@ public class AiTinderBackendApplication implements CommandLineRunner {
 				"INTP"
 		);
 		profileRepository.save(profile);
+
+		Profile profile2 = new Profile(
+				"2",
+				"Blah",
+				"Blacksheep",
+				"American",
+				Gender.MALE,
+				25,
+				"Software Developer",
+				"foo.jpg",
+				"INTP"
+		);
+		profileRepository.save(profile2);
+
 		profileRepository.findAll().forEach(System.out::println);
 
 		Conversation conversation = new Conversation(
