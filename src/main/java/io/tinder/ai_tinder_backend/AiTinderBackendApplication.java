@@ -27,6 +27,7 @@ public class AiTinderBackendApplication implements CommandLineRunner {
 	}
 
 	public void run(String ... args) {
+		profileCreationService.createProfiles(0);
 		profileCreationService.saveProfilesToDB();
 
 	}
