@@ -1,6 +1,9 @@
 package io.tinder.ai_tinder_backend;
 
+import io.tinder.ai_tinder_backend.conversations.ConversationRepository;
+import io.tinder.ai_tinder_backend.matches.MatchRepository;
 import io.tinder.ai_tinder_backend.profiles.ProfileCreationService;
+import io.tinder.ai_tinder_backend.profiles.ProfileRepository;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +15,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AiTinderBackendApplication implements CommandLineRunner {
+
+	@Autowired
+	private ProfileRepository profileRepository;
+	@Autowired
+	private ConversationRepository conversationRepository;
+	@Autowired
+	private MatchRepository matchRepository;
 
 	@Autowired
 	private ProfileCreationService profileCreationService;
@@ -27,9 +37,15 @@ public class AiTinderBackendApplication implements CommandLineRunner {
 	}
 
 	public void run(String ... args) {
-		profileCreationService.createProfiles(0);
+		clearAllData();
 		profileCreationService.saveProfilesToDB();
 
+	}
+
+	private void clearAllData() {
+		conversationRepository.deleteAll();
+		matchRepository.deleteAll();
+		profileRepository.deleteAll();
 	}
 
 }

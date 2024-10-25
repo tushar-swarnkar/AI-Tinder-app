@@ -5,10 +5,7 @@ import io.tinder.ai_tinder_backend.conversations.ConversationRepository;
 import io.tinder.ai_tinder_backend.profiles.Profile;
 import io.tinder.ai_tinder_backend.profiles.ProfileRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -31,6 +28,7 @@ public class MatchController {
 
     public record CreateMatchRequest(String profileId) {}
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/matches")
     public Match createNewMatch(@RequestBody CreateMatchRequest request) {
 
@@ -61,6 +59,7 @@ public class MatchController {
         return match;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/matches")
     public List<Match> getAllMatches() {
         return matchRepository.findAll();
