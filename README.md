@@ -1,29 +1,24 @@
 # AI Tinder App - Backend
 
-This is the backend repository for the AI Tinder app. The backend is responsible for handling user authentication, matching algorithms, and interaction features. It leverages AI to provide more accurate user matches based on preferences, interests, and behavior.
+This is the backend repository for the AI Tinder app, a unique dating application where users are matched with AI-generated profiles. Each AI profile is created with the Myers Briggs personality type, offering engaging and varied interactions. The backend handles user authentication and real-time chat interactions using OpenAI or Ollama chat completions for AI-generated profiles.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ## Features
 - **User Registration and Authentication**: Secure signup and login functionalities.
-- **AI-Based Matching**: Personalized user matching using AI algorithms.
-- **Profile Management**: Update profile details, preferences, and photos.
-- **Swipe and Match System**: Like or pass on profiles; get notified when a match is made.
-- **Chat Functionality**: Send and receive messages with matches.
-- **Admin Dashboard**: Manage users, view analytics, and handle reports.
+- **AI Profile Matching**: AI-generated profiles with unique personality types.
+- **Chat with AI Profiles**: Interactive chat where each AI profile responds based on its distinct personality.
+- **AI Chat Completion**: Leverages Ollama for generating dynamic chat responses.
 
 ## Tech Stack
-- **Backend Framework**: Node.js with Express
+- **Backend Framework**: Java with Spring Boot
 - **Database**: MongoDB
-- **AI Library**: TensorFlow.js / PyTorch (mention specifics if applicable)
+- **AI Library**: OpenAI API or Ollama API for chat completion
 - **Authentication**: JWT for secure user sessions
-- **Other Libraries**: Mongoose, bcrypt, dotenv
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) and npm installed on your machine.
-- [MongoDB](https://www.mongodb.com/) instance set up (or use MongoDB Atlas).
+## Getting Started
+To get a local copy of the project up and running:
 
-### Installation
-1. **Clone the repository**
-   ```bash
+**Clone the repository**   
+```bash
    git clone https://github.com/tushar-swarnkar/AI-Tinder-app.git
