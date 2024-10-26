@@ -5,7 +5,6 @@ This is the frontend repository for the AI Tinder app, a modern dating applicati
 ---
 
 ## Features
-- **User Registration and Login**: Simple and secure authentication interface.
 - **AI-Powered Matching**: View profiles tailored to user preferences.
 - **Swipe and Match Interface**: Intuitive swipe left or right for user matching.
 - **Chat System**: Real-time messaging with matches.
@@ -13,7 +12,7 @@ This is the frontend repository for the AI Tinder app, a modern dating applicati
 - **Responsive Design**: Optimized for both mobile and desktop views.
 
 ## Tech Stack
-- **Frontend Framework**: React
+- **Frontend Framework**: React, JavaScript
 - **Styling**: CSS / Tailwind CSS
 - **API Integration**: API requests to the backend
 - **Other Libraries**: React Router for navigation, and Socket.io for real-time messaging
