@@ -5,8 +5,8 @@ This is the backend repository for the AI Tinder app, a unique dating applicatio
 ---
 
 ## Features
-- **User Registration and Authentication**: Secure signup and login functionalities.
 - **AI Profile Matching**: AI-generated profiles with unique personality types.
+- **Chat with AI Profiles**: Interactive chat where each AI profile responds based on its distinct personality.
 - **Chat with AI Profiles**: Interactive chat where each AI profile responds based on its distinct personality.
 - **AI Chat Completion**: Leverages Ollama for generating dynamic chat responses.
 
